@@ -1,33 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-<!-- my custom stlyes -->
-  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <title>Goodreads</title>
 </head>
 
 <body>
-	<div class = "mainBody">
-	<h1 id="theTitle">What is Your Favorite Food? </h1>
-	<form id="theForm">
-	  <label>Enter a Food</label>
-		<input id="FoodInput" type="text"> <br/>
-		<input id="FoodSubmit" type="submit" value="Submit">
-	</form>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script text="type/javascript" src="script.js"></script>
-	<div class="card-body text-center">
-  <h1 class="title"></h1>
-  <img class="img" alt="img for recipie"/>
-  <div id="foodInfo"></div>
-  <div id="ingredientList"></div>
+	<div id="theTop">
+		  <h1>Goodreads</h1>
 	</div>
-		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 	
-
-	
-</div>
-<p class="git"><a href="https://github.com/victoria-skylan/creativeLab2">GitHub</a></p>
+	<div id="app">
+		<div id ="searchBar">
+			<h3>Search Books:</h3>
+			 <form v-on:submit.prevent="searchBook">
+				<textarea v-model="bookEntered"></textarea>
+				<button type="submit" id="sbutton">Search</button>
+			  </form>
+		</div>
+		<div v-if="loading">
+			<p>Loading... &nbsp; <img id="load" alt="loading" src="loading.png"></p>
+		</div>
+		<div v-else> 
+			<div v-for="book in allBooks">
+			<hr>
+			<p>{{book.title}}</p>
+			<p><i>-- {{book.publishDate}}</i></p>
+		 	</div>
+		</div>
+		<!-- I don't want to diplay thin unless they click a button and want to see it. I could have the button at the top, and if it is clicked then the page scrolls down and displays the page -->
+		<div id="favorties">
+			
+			
+			
+	    </div>
+	</div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
