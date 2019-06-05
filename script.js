@@ -17,7 +17,7 @@ let app = new Vue({
 				this.loading = true;
 				const bookString = this.bookEntered.split(' ').join('+');
 
-				const json = await axios.get('http://openlibrary.org/search.json?q=' + bookString);
+				const json = await axios.get('https://openlibrary.org/search.json?q=' + bookString);
 				for (let i = 0; i < json.data.docs.length; i++) {
 				console.log(i);
 				var curDate = "";
