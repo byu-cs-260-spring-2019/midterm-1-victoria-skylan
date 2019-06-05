@@ -9,7 +9,7 @@ let app = new Vue({
 	addedName: '',
 	  
   addedComment: '',
-  favoiteBooks: {},
+  favoiteBooks: [],
   },
   methods: {
     async findBooks() {
@@ -61,7 +61,7 @@ let app = new Vue({
 		},  
 		addBooktoFav(bookIndex) {
 			this.allBooks[bookIndex].favorite = true;
-			this.favoiteBooks.push(allBooks[bookIndex]);
+			this.favoiteBooks.push(this.allBooks[bookIndex]);
 		}
   },
     computed: {
