@@ -15,18 +15,20 @@
 		<div id ="searchBar">
 			<h3>Search Books:</h3>
 			 <form v-on:submit.prevent="searchBook">
-				<textarea v-model="bookEntered"></textarea>
-				<button type="submit" id="sbutton">Search</button>
+					<input v-model="bookEntered"></input>
+					<button type="submit" id="sbutton">Search</button>
 			  </form>
 		</div>
 		<div v-if="loading">
 			<p>Loading... &nbsp; <img id="load" alt="loading" src="loading.png"></p>
 		</div>
 		<div v-else> 
-			<div v-for="book in allBooks">
-			<hr>
-			<p>{{book.title}}</p>
-			<p><i>-- {{book.publishDate}}</i></p>
+			<div v-for="book in allBooks">	
+				<hr>
+				<p class="bookTitle"><img v-bind:src="book.url" height="40"> &nbsp;  &nbsp; {{book.title}} &nbsp; &nbsp; &nbsp; 
+					<button v-on:click="addBooktoFav(book.place)" id="favButton">	&#9733;</button></p>
+				<p>{{book.author}} </p>
+				<p> -- {{book.publishDate}}</i></p>
 		 	</div>
 		</div>
 		<!-- I don't want to diplay thin unless they click a button and want to see it. I could have the button at the top, and if it is clicked then the page scrolls down and displays the page -->

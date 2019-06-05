@@ -8,9 +8,15 @@ body {
 button {
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
+    margin-left: 20px;
 }
-
-textarea {
+input {
+    padding: 5px;
+}
+.bookTitle {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(162,111,112,1.00);
 }
 
 #theTop {
@@ -20,10 +26,16 @@ textarea {
     background-repeat: no-repeat;
     padding: 50px;
 	padding-top: 75px;
-	padding-bottom: 75px;
+    padding-bottom: 75px;
+    border: 3px solid rgba(162,111,112,1.00);
+}
+#favButton {
+    font-size: 15px;
+    margin-bottom: 10px;
 }
 #searchBar {
-	display: inline;
+    display: inline;
+    padding-left: 30px;
 }
 #load {
 	height: 15px;
