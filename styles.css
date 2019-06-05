@@ -33,6 +33,10 @@ input {
     font-size: 15px;
     margin-bottom: 10px;
 }
+.bookTitle button:focus   {
+    border: 2px solid yellow;
+    background-color: yellow;
+}
 #searchBar {
     display: inline;
     padding-left: 30px;
