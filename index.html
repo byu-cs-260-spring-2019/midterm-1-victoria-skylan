@@ -19,6 +19,14 @@
 					<button type="submit" id="sbutton">Search</button>
 			  </form>
 		</div>
+		<button v-on:click="viewFavorites" id="seefavs">Favorites &#9733;</button>
+		<div id="favoriteSection" v-for="book in favoiteBooks" id="viewfavs">
+				<hr>
+				<p class="bookTitle"><img v-bind:src="book.url" height="40"> &nbsp;  &nbsp; {{book.title}} &nbsp; &nbsp; &nbsp; 
+					<button v-on:click="addBooktoFav(book.place)" class="favedButton">	&#9733;</button></p>
+				<p>{{book.author}} </p>
+				<p> -- {{book.publishDate}}</i></p>
+		</div>
 		<div v-if="loading">
 			<p>Loading... &nbsp; <img id="load" alt="loading" src="loading.png"></p>
 		</div>
@@ -31,12 +39,6 @@
 				<p> -- {{book.publishDate}}</i></p>
 		 	</div>
 		</div>
-		<!-- I don't want to diplay thin unless they click a button and want to see it. I could have the button at the top, and if it is clicked then the page scrolls down and displays the page -->
-		<div id="favorties">
-			
-			
-			
-	    </div>
 	</div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

@@ -62,6 +62,9 @@ let app = new Vue({
 		addBooktoFav(bookIndex) {
 			this.allBooks[bookIndex].favorite = true;
 			this.favoiteBooks.push(this.allBooks[bookIndex]);
+		},
+		viewFavorites() {
+			//document.getElementById("favoriteSection").style.display = "inline";
 		}
   },
     computed: {
