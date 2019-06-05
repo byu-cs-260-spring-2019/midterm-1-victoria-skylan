@@ -19,11 +19,11 @@
 					<button type="submit" id="sbutton">Search</button>
 			  </form>
 		</div>
-		<button v-on:click="viewFavorites" id="seefavs">Favorites &#9733;</button>
+		<h2 id="seefavs">Favorites &#9733;</h2>
 		<div id="favoriteSection" v-for="book in favoiteBooks" id="viewfavs">
 				<hr>
-				<p class="bookTitle"><img v-bind:src="book.url" height="40"> &nbsp;  &nbsp; {{book.title}} &nbsp; &nbsp; &nbsp; 
-					<button v-on:click="addBooktoFav(book.place)" class="favedButton">	&#9733;</button></p>
+				<p class="bookTitle"><img v-bind:src="book.url" height="40"> &#9733; &nbsp;  &nbsp; {{book.title}} &nbsp; &nbsp; &nbsp;
+					<button v-on:click="deleteItem(book)" class="delete">X</button></p>
 				<p>{{book.author}} </p>
 				<p> -- {{book.publishDate}}</i></p>
 		</div>

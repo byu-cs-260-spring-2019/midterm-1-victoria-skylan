@@ -43,6 +43,7 @@ input {
 #seefavs {
     margin-top: 20px;
     background-color: rgba(162,111,112,1.00);
+    display: none;
 }
 .bookTitle button:focus   {
     border: 2px solid yellow;

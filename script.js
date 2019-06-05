@@ -23,7 +23,7 @@ let app = new Vue({
 				var curDate = "";
 				var curAuth = "";
 				var curIS = "";
-				if(json.data.docs[i].hasOwnProperty( 'publish_date')) {
+				if(json.data.docs[i].hasOwnProperty('publish_date')) {
 					curDate = json.data.docs[i].publish_date[0];
 				}
 				if (json.data.docs[i].hasOwnProperty( 'author_name')) {
@@ -63,13 +63,18 @@ let app = new Vue({
 			this.allBooks[bookIndex].favorite = true;
 			this.favoiteBooks.push(this.allBooks[bookIndex]);
 		},
-		viewFavorites() {
-			//document.getElementById("favoriteSection").style.display = "inline";
-		}
+		deleteItem(book) {
+      var index = this.favoiteBooks.indexOf(book);
+      if (index > -1)
+        this.favoiteBooks.splice(index,1);
+    },
   },
     computed: {
 		
   },
     watch: { 
+		favoiteBooks() {
+			document.getElementById("seefavs").style.display = "block";
+		}
   },
 });
